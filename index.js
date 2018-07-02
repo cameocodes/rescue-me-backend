@@ -1,13 +1,13 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
-
+const petsRouter = require('./pets/petsRouter')
 const app = express()
 
 app.use(bodyParser.json())
-app.use(cors({
-    credentials: true 
- }))
+app.use(cors())
+app.use('/', petsRouter)
+app.use('/pets', petsRouter)
 
 const PORT = 3000
 
