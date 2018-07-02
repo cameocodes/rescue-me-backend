@@ -6,7 +6,6 @@ const app = express()
 
 app.use(bodyParser.json())
 app.use(cors())
-app.use('/', petsRouter)
 app.use('/pets', petsRouter)
 
 const PORT = 3000

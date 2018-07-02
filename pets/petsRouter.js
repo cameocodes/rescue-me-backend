@@ -13,4 +13,15 @@ router.get('/', (req, res) => {
 
 })
 
+router.get('/:id', (req, res) => {
+    Pet.findById(req.params.id)
+    .then(pet => {
+        console.log(pet)
+        res.status(200).json(pet)
+    })
+    .catch(err => {
+        throw new Error(err.message)
+    })
+})
+
 module.exports = router
